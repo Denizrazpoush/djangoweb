@@ -1,0 +1,22 @@
+{% extends "blog/parents/base.html"%}
+{% load static %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+
+
+<h1>Hi there !</h1>
+
+<h1>{{post.title}}</h1>
+
+<!-- #filterline breaks baraye in hast ke /n ha dar matn ma be shekle drusti vared beshavad .
+#Emrozo yadet bashe ke cheqdr halet bad bod ama kar krdi o hale khodeto khob krdi ! to najie zendegie khodt hasti Deniz man be kesi ke hasti eftekhar mikonm o bhtrinaro brt mikham ! doset drm deniz nazaninm .
+#filtere trancatewords baraye in hast ke be tedade moshakhasi az kalame be ma neshan midahad ! -->
+
+<p>{{post.body|linebreaks|truncatewords:5}}</p>
+
+
+
+
+{% endblock%}

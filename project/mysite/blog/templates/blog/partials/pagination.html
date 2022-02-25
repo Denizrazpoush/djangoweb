@@ -1,0 +1,61 @@
+<div>
+    <span>
+
+        {% if page.has_previous %}
+            <a href="?page={{page.previous_page_number }}"> Last Page </a>
+            
+        {% endif %}
+
+        <span>
+
+            Page {{ page.number }} of {{ page.paginator.num_pages }}
+
+
+
+            
+        </span>
+
+
+        {% if page.has_next %}
+            <a href="?page={{page.next_page_number }}"> Next page  </a>
+            
+        {% endif %}
+
+        <br><br>
+
+        {% for i in page.paginator.page_range %}
+            {% if i == page.number %}
+            <span style="color:red "> {{ i }}</span>
+
+            {% else %}
+
+                 {{ i }}
+
+            
+
+            {% endif %}
+
+        
+            
+
+
+
+
+        {% endfor %}
+
+
+    
+
+
+
+
+
+        
+
+
+
+
+
+    </span>
+
+</div>

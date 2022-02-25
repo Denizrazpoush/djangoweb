@@ -1,0 +1,29 @@
+{% extends "blog/parents/base.html"%}
+{% load static %}
+
+
+{% block title %} List page  {% endblock %}
+
+{% block head %} 
+
+<link rel="stylesheet" href="{% static 'css/listcss/list.css'%}">
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="head1" >Hi ther we have somepost here !</h1>
+    
+{% for post in posts%}
+
+<h1><a href="{{post.get_absolute_url}}">{{post.author}} : {{post.slug}}</a></h1>
+
+{% endfor %}
+
+{% include "blog/partials/pagination.html" with page=page_obj  %}
+
+{% endblock %}
+
+
